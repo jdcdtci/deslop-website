@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relay: faster test runs</title>
+<style>
+@font-face { font-family: "Charter"; src: local("Bitstream Charter"), local("Charter"); }
+@font-face { font-family: "Heros"; src: local("TeX Gyre Heros"), local("Liberation Sans"); }
+:root {
+  --ink: #1b1f24; --muted: #4a525c; --line: #d9dde2; --paper: #ffffff;
+  --accent: #b4380e; --accent-ink: #ffffff; --code: #14171b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Heros, sans-serif; font-size: 18px; line-height: 1.55; }
+header { display: flex; align-items: center; justify-content: space-between; padding: 22px 64px; border-bottom: 1px solid var(--line); }
+.mark { font-family: Charter, serif; font-weight: 700; font-size: 24px; color: var(--ink); text-decoration: none; }
+nav a { color: var(--muted); text-decoration: none; margin-left: 28px; font-size: 16px; display: inline-block; padding: 10px 0; }
+.mark { display: inline-block; padding: 6px 0; }
+.text-link { display: inline-block; padding: 10px 0; }
+main > div { min-width: 0; }
+nav a:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+main { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; padding: 72px 64px 56px; align-items: start; }
+h1 { font-family: Charter, serif; font-weight: 700; font-size: 54px; line-height: 1.08; margin: 0 0 22px; max-width: 15ch; }
+.lede { color: var(--muted); max-width: 44ch; margin: 0 0 32px; }
+.actions { display: flex; align-items: center; gap: 24px; }
+.btn { background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 16px; padding: 14px 22px; border-radius: 4px; text-decoration: none; min-height: 48px; display: inline-flex; align-items: center; }
+.text-link { color: var(--ink); font-size: 16px; }
+pre { margin: 6px 0 0; background: var(--code); color: #d6dbe1; font: 14px/1.7 "DejaVu Sans Mono", monospace; padding: 22px 24px; border-radius: 8px; overflow-x: auto; }
+pre .dim { color: #8b949e; } pre .ok { color: #7ee2a8; } pre .hot { color: #ffb38a; }
+.note { font-size: 15px; color: var(--muted); margin-top: 12px; }
+section.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; padding: 0 64px 64px; }
+.facts h2 { font-family: Charter, serif; font-size: 22px; margin: 0 0 6px; }
+.facts p { margin: 0; color: var(--muted); font-size: 16px; }
+@media (max-width: 900px) { main, section.facts { grid-template-columns: 1fr; padding-left: 24px; padding-right: 24px; } header { padding: 18px 24px; } nav a { margin-left: 16px; } h1 { font-size: 40px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none; animation: none; } }
+</style>
+</head>
+<body>
+<header>
+  <a class="mark" href="/">Relay</a>
+  <nav><a href="/docs">Docs</a><a href="/pricing">Pricing</a><a href="/changelog">Changelog</a></nav>
+</header>
+<main>
+  <div>
+    <h1>Your test suite in four minutes, not twenty-two.</h1>
+    <p class="lede">Relay splits tests across machines by how long each file took on the last run, so the slowest file stops setting the pace for everyone.</p>
+    <div class="actions">
+      <a class="btn" href="/connect">Connect a repository</a>
+      <a class="text-link" href="/docs/splitting">How splitting works</a>
+    </div>
+  </div>
+  <div>
+    <pre><span class="dim">$ relay run --machines 6</span>
+<span class="dim">reading timings from last run (418 files)</span>
+machine 1  71 files   3m 52s <span class="ok">done</span>
+machine 2  64 files   3m 49s <span class="ok">done</span>
+machine 3  88 files   3m 55s <span class="ok">done</span>
+machine 4  52 files   3m 41s <span class="ok">done</span>
+machine 5  79 files   3m 58s <span class="ok">done</span>
+machine 6  64 files   3m 50s <span class="ok">done</span>
+<span class="hot">wall time 3m 58s</span> <span class="dim">(previous: 22m 10s)</span></pre>
+    <p class="note">Output from our own repository, run on 6 machines.</p>
+  </div>
+</main>
+<section class="facts">
+  <div><h2>Works with your CI</h2><p>GitHub Actions, GitLab and Buildkite. One line in your config.</p></div>
+  <div><h2>No test changes</h2><p>Relay reads your existing runner's output. Nothing to rewrite.</p></div>
+  <div><h2>Priced per machine-hour</h2><p>Billed by the machine-hour, once a month. No seats.</p></div>
+</section>
+</body>
+</html>

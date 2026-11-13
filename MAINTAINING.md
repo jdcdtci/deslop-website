@@ -34,6 +34,7 @@ The rulebook goes stale on its own. Every published ban list pushes models towar
    ```bash
    python3 scripts/deslop_scan.py fixtures/slop.html --render fixtures/slop.html   # must exit 1 with 10+ visual tells
    python3 scripts/deslop_scan.py fixtures/clean.html --render fixtures/clean.html # must exit 0
+   python3 scripts/deslop_scan.py fixtures/after.html --render fixtures/after.html # must exit 0
    ```
    If a new rule fires on clean.html, fix the rule, not the fixture. Add each new tell to slop.html.
 5. **Version and log:** bump the version in RULES.md (patch = thresholds, minor = rules added or removed, major = process change) and add a CHANGELOG entry citing sources.

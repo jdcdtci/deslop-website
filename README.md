@@ -2,6 +2,8 @@
 
 **Build and audit web pages so they look authored, not AI-generated.**
 
+![The same page before and after deslop-web: the before scores HOLD with 14 visual tells, the after scores SHIP with none](docs/before-after.png)
+
 An agent skill (Claude Code, Claude.ai, Cursor, Codex, or any agent that reads `SKILL.md`) plus a deterministic scanner. It works in two modes:
 - **Generate:** stops AI-default design from being written in the first place.
 - **Audit:** finds and ranks the tells in an existing page.
