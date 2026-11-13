@@ -1,0 +1,5 @@
+{
+  "_about": "Optional preset for software/SaaS marketing sites. Merge into deslop.config.json.",
+  "extra_buzzwords": ["10x", "AI-powered", "all-in-one", "single source of truth", "frictionless", "blazing fast",
+    "ship faster", "built for scale", "enterprise-grade", "mission-critical", "workflows that just work"]
+}

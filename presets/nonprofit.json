@@ -1,0 +1,6 @@
+{
+  "_about": "Optional preset for nonprofits and mission-driven orgs. Merge into deslop.config.json.",
+  "extra_buzzwords": ["make a difference", "change lives", "brighter future", "together we can", "impactful",
+    "empower communities", "beacon of hope", "lasting change"],
+  "modules": ["institutional"]
+}

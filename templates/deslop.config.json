@@ -1,0 +1,21 @@
+{
+  "_about": "Project config for deslop_scan.py. Keep in sync with DESIGN.md (tokens, Waivers).",
+  "presets": [],
+  "waivers": {
+    "_example_C-12": "Primary brand color covers ~70% of layouts per brand book p.24"
+  },
+  "allowed_colors": [],
+  "allowed_fonts": [],
+  "max_font_families": null,
+  "severity_overrides": {},
+  "extra_buzzwords": [],
+  "allow_words": [],
+  "max_emdash_per_200_words": 2,
+  "emdash_severity": null,
+  "max_exclamations_per_page": null,
+  "custom_patterns": [
+    {"id": "BRAND-EXAMPLE", "severity": "P1", "scope": "text", "regex": "\\bAcme Inc\\.", "message": "Write the company name as 'Acme'"}
+  ],
+  "ignore_paths": ["fixtures/", "examples/"],
+  "chrome_path": null
+}

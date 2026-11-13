@@ -1,0 +1,7 @@
+{
+  "_about": "Optional preset for schools, colleges and education sites. Merge into deslop.config.json.",
+  "extra_buzzwords": ["holistic", "nurturing environment", "unlock their potential", "21st-century learners",
+    "well-rounded", "tomorrow's leaders", "next generation leaders", "lifelong learners", "learning journey",
+    "empowering students", "rigorous yet nurturing", "a community of learners"],
+  "modules": ["institutional"]
+}
